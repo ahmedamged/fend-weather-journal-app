@@ -29,16 +29,12 @@ function listeningTo() {
   console.log(`Server is up and running at localhost:${port}`);
 }
 
-app.get('/all', getData);
-
-function getData(request, response){
+app.get('/all', (request, response)=>{
   response.send(projectData);
   projectData = [];
-}
+});
 
-app.post('/add', saveData);
-
-function saveData(request, response){
+app.post('/add', (request, response)=>{
   newData = {
     date: request.body.date,
     temp: request.body.temp,
@@ -46,4 +42,4 @@ function saveData(request, response){
   }
   projectData.push(newData);
   console.log(projectData);
-}
+});
