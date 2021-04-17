@@ -23,7 +23,7 @@ body{
 }
 
 .feel{
-    margin: -160px auto 0px;
+    margin: -140px auto 0px;
 }
 
 .entry{
@@ -58,10 +58,10 @@ body{
     margin-bottom: 8px;
 }
 
-.zipcode{
+.zipcode,
+.degrees{
     display:block;
     height: 60px;
-    width: 500px;
     background:#79bb84;
     color: #083200;
     font-size: 20px;
@@ -71,6 +71,12 @@ body{
     padding: 8px;
 }
 
+.zipcode{
+    width: 500px;
+}
+.degrees{
+    width: 516px;
+}
 .generate-btn{
     width: 510px;
     height: 85px;
@@ -125,7 +131,8 @@ body{
 }
 
 @media screen and (max-width: 768px) {
-  .generate-btn{
+  .generate-btn,
+  .degrees{
     width: 72vw;
   }
   .zipcode,

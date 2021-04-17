@@ -1,6 +1,9 @@
 /* Global Variables */
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '&appid=4d022c7710eb666a1575127dca0bc0a0';
+const fahrenheit = '&units=imperial';
+const celcius = '&units=metric';
+let degreesType = fahrenheit;
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -18,7 +21,15 @@ function getData(){
     return;
   }
   let newFeeling = document.querySelector('#feelings').value;
-  getWeatherData(baseURL,newZIP,apiKey)
+  let choosedType = document.querySelector('#degreesType').value;
+  if (choosedType === 'celcius') {
+    degreesType = celcius;
+    document.querySelector('#degreesChar').innerHTML = 'C';
+  }else {
+    degreesType = fahrenheit;
+    document.querySelector('#degreesChar').innerHTML = 'F';
+  }
+  getWeatherData(baseURL,newZIP,apiKey,degreesType)
     .then(function(data) {
       if(data.cod === '404'){
         alert('Zipcode isn\'t correct.\nPlease, Enter a valid zipcode.');
@@ -29,8 +40,8 @@ function getData(){
     })
 }
 
-const getWeatherData = async (url,zip,key)=>{
-  const response = await fetch(url+zip+key)
+const getWeatherData = async (url,zip,key,type)=>{
+  const response = await fetch(url+zip+key+type)
   try {
     const data = await response.json();
     return data;

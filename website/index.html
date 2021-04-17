@@ -19,13 +19,17 @@
     <div>
       <label class="main-labels" for="feelings">How are you feeling today?</label>
       <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="5" cols="60"></textarea>
+      <select id="degreesType" class="degrees" name="degrees">
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="celcius">Celcius</option>
+      </select>
     </div>
     <button class="generate-btn" id="generate" type="submit">Generate</button>
   </div>
   <div class="holder entry">
     <div class="title">Most Recent Entry</div>
     <div id="entryHolder">
-      <div>Temperature: <span id="temp"></span></div>
+      <div>Temperature: <span id="temp"></span> &deg;<span id="degreesChar">F</span></div>
       <div>Date: <span id="date"></span></div>
       <div>I'm feeling: <span id="content"></span></div>
     </div>
