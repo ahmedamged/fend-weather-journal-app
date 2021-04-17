@@ -8,104 +8,128 @@ body{
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
     height:100vh;
-    background: #f23557;
+    background: #015c00;
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    padding: 25px 10px;
+    border-radius: 10px;
 }
 
-.holder{
+.zip{
+    margin: -105px auto 0px;
+}
 
+.feel{
+    margin: -160px auto 0px;
 }
 
 .entry{
-    background: rgba(59, 74, 107, .4);
+    background: rgba(74, 188, 120, .4);
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
 }
 
-#entryHolder{
-
-}
-
-#date{
-
-}
-
-#temp{
-
-}
-
+#date,
+#temp,
 #content{
-
+    color: #c0ff00;
 }
 
 .headline {
-
+    height: fit-content;
+    text-align: center;
+    font-size: 44px;
 }
 .title{
-
+    margin: 9px 0px;
+    padding-bottom: 9px;
+    border-bottom: 2px dotted #c0ff00;
+    color: #c0ff00;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
-label{
+.main-labels{
     display:block;
     font-size: 27px;
+    margin-bottom: 8px;
 }
 
-input{
+.zipcode{
     display:block;
     height: 60px;
-    width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
+    width: 500px;
+    background:#79bb84;
+    color: #083200;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
+    border-radius: 10px;
+    padding: 8px;
 }
 
-button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
+.generate-btn{
+    width: 510px;
+    height: 85px;
+    background: #022600;
     color: #f0d43a;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
     border: none;
-    box-shadow: 2px 4px 5px #444;
+    box-shadow: 4px 5px 10px 0px #d6ff00;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
 }
-h1{
-    font-size: 36px;
+.generate-btn:hover{
+    box-shadow: none;
+}
+.generate-btn:active{
+    box-shadow: 4px 5px 10px 0px #d6ff00;
 }
 
-textarea{
-    background:#22b2da;
-    color: #f0d43a;
+.myInput{
+    background:#79bb84;
+    color: #083200;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    border-radius: 10px;
+    padding: 8px;
 }
 /* Reset style for HTML element on active to have no border*/
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
+.zipcode:focus,
+.myInput:focus,
+.generate-btn:focus {
     outline: none;
 }
 /* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
+::placeholder { /* Firefox, Chrome, Opera */
+    color: #083200;
     font-family: 'Oswald', sans-serif;
 
-} 
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #083200;
     font-family: 'Oswald', sans-serif;
 
-} 
-  
-::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #083200;
     font-family: 'Oswald', sans-serif;
 
-} 
+}
+
+@media screen and (max-width: 768px) {
+  .generate-btn{
+    width: 72vw;
+  }
+  .zipcode,
+  .myInput{
+    width: 70vw;
+  }
+}
